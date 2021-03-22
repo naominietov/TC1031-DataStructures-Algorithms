@@ -1,0 +1,12 @@
+// -------------------------------------------------------------------------
+// ID:          A01706095
+// Name:        Naomi Estefanía Nieto Vega 
+// Date:        14/03/2021
+// File name:   README.txt
+// Title:       Sem05-1 Algoritmos de ordenamiento
+// Description: Implementation of the sort and search 
+//              algorithms
+// ------------------------------------------------------------------------
+
+
+Link del video: https://youtu.be/BTayZ9mHEfQ

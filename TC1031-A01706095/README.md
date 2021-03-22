@@ -1,11 +1,11 @@
-## &#128105;&#127995;&#8205;&#128187; Autora
+### &#128105;&#127995;&#8205;&#128187; Autora
 * ID:          A01706095
 * Name:        Naomi Estefanía Nieto Vega 
 * Date:        14/03/2021
 * File name:   README.txt
 * Title:       Act-Integradora-1
 
-## 💻 Instrucciones para compilar:
+### 💻 Instrucciones para compilar:
 
 Primero se debe abrir el archivo en un entorno que permita compilar C++, puede ser un compilador en línea como [Replit](https://replit.com/) o uno local como Visual Studio Code o directamente desde consola. Para compilar en consola únicamente tecleamos g++ main.cpp y se generará un archivo /a.out. En caso de ser en un IDE en línea después de que abrimos el archivo damos clic en compilar o ejecutar programa y seguimos los siguientes pasos: 
 *Nota: Es importante que antes de compilar revisemos que este incluido el archivo ```bitacora.txt```para que pueda leer los datos. 

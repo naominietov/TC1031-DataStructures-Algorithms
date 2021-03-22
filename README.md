@@ -2,8 +2,8 @@
 
 In this repository will be stored all the activities, assignments and evidences of the TC1031 subject
 
-## Autora
-Naomi Estefania Nieto Vega
-
+## 👩🏻‍💻 Autora
+* ID:          A01706095
+* Name:        Naomi Estefanía Nieto Vega 
 
 

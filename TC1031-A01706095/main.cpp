@@ -55,7 +55,7 @@ void quickSort(std::vector<Data *> &arr, int low, int high) {
 /* This function helps us to search the starting and ending
 date of the query so that we can compare their keys later.
 It receives a T type vector and the requested search value, 
-then it returns the position of that value */
+then it returns the position of that value. O(log n) complexity */
 
 template <class T>
 int binarySearchSorted(std::vector<T> &arr, int value){  

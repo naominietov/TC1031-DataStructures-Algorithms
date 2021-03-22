@@ -1,6 +1,6 @@
-# README.md Act-Integradora-1
+# 📌 README.md Act-Integradora-1
 
-## &#128105;&#127995;&#8205;&#128187; Autora
+##👩🏻‍💻 Autora
 * ID:          A01706095
 * Name:        Naomi Estefanía Nieto Vega 
 * Date:        14/03/2021

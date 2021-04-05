@@ -5,6 +5,7 @@
 * A01706095 Naomi Estefanía Nieto Vega
 * A01283687 Ramsés Herrera
 */
+
 #include "Node.h"
 #include "LinkedList.h"
 #include "OutOfRangeException.h"
@@ -23,8 +24,8 @@ int main(int argc, const char * argv[]) {
   cout << "Hola!! Bienvenido." << endl;
   cout << "=====================================================\n";
   cout << "a) Elige un tipo de dato para las listas: " << endl;
-  cout << "\t1. Entero \n";
-  cout << "\t2. Char \n";
+  cout << "\t1. Entero [int] \n";
+  cout << "\t2. Char [char] \n";
   cout << "=====================================================\n";
   cout << "Opción: ";
   cin >> tipoDato;

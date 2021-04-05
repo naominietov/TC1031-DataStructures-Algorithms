@@ -35,7 +35,7 @@ Opción:
 ```
 3. En caso de seleccionar manual, se irán desplegando los espacios para insertar los valores en la lista principal y en una lista secundaria. 
 
-*IMPORTANTE: Esta lista secundaria es únicamente para la opción 7 (sobrecarga del signo =), ya que por default el programa siempre hará los cambios en la lista principal (Lista 1) a menos que se modifique directamente en el main. Por lo que, en la lista 2 nunca se verán cambios reflejados con las acciones en ninguna opción que sea diferente a la 7.*
+**IMPORTANTE: Esta lista secundaria es únicamente para la opción 7 (sobrecarga del signo =), ya que por default el programa siempre hará los cambios en la lista principal (Lista 1) a menos que se modifique directamente en el main. Por lo que, en la lista 2 nunca se verán cambios reflejados con las acciones en ninguna opción que sea diferente a la 7.**
 
 4. Por último preguntará el tamaño de la lista que se desea generar, en este paso sólo se introduce un número entero.
 ```

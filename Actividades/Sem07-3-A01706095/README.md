@@ -39,7 +39,6 @@ Opción:
 
 4. Por último preguntará el tamaño de la lista que se desea generar, en este paso sólo se introduce un número entero.
 ```
-
 =====================================================
 c) Introduce el tamaño de la lista: 
 ```

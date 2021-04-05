@@ -4,8 +4,8 @@ En esta actividad se desarrollan varias funciones para ser utilizadas con listas
 
 ## Autores
 
-A01706095 Naomi Estefanía Nieto Vega
-A01283687 Ramsés Herrera
+- A01706095 Naomi Estefanía Nieto Vega
+- A01283687 Ramsés Herrera
 
 ## Instrucciones para compilar 
 

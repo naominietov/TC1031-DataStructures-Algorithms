@@ -1,19 +1,14 @@
-﻿// -------------------------------------------------------------------------
-// ID:          A01706095
-// Name:        Naomi Estefanía Nieto Vega 
-// Date:        14/03/2021
-// File name:   README.txt
-// Title:       Sem05-1 Algoritmos de ordenamiento
-// Description: Implementation of the sort and search 
-//              algorithms
-// ------------------------------------------------------------------------
+# Actividad Sem05-1 Algoritmos de ordenamiento
 
+## Datos 
+- ID:          A01706095
+- Name:        Naomi Estefanía Nieto Vega 
+- Date:        14/03/2021
+- Description: Implementation of the sort and search algorithms
 
-Instrucciones para compilar:
-
+## Instrucciones para compilar
 
 Primero se debe abrir el archivo en un entorno que permita compilar C++, puede ser un compilador en línea o uno local desde consola. Para compilar en consola únicamente tecleamos g++ main.cpp y se generará un archivo /a.out. En caso de ser en un IDE en línea después de que abrimos el archivo damos clic en compilar o ejecutar programa y seguimos los siguientes pasos:
-
 
 1. Aparecerá en el menú una lista de opciones de tipos de datos, entre las opciones están tipo entero, flotante, carácter o doble. Aquí introducimos el número que corresponda al tipo de dato que deseamos usar para llenar nuestro vector (Del 1 al 4) o introducimos 5 sin espacios ni comillas para salir del programa.
 

@@ -2,7 +2,7 @@
 
 En esta actividad se desarrollan varias funciones para ser utilizadas con listas doblemente encadenadas mediante la creación de un ADT que represente una estructura de datos lineal.
 
-## Autores
+### Autores
 
 - A01706095 Naomi Estefanía Nieto Vega
 - A01283687 Ramsés Herrera Santiago

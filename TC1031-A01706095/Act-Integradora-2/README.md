@@ -7,5 +7,5 @@
 * File name:   README.txt
 * Title:       Act-Integradora-2
 
-## 💻 Instrucciones para compilar:
+## Instrucciones para compilar:
 

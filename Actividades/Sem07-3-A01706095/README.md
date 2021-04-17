@@ -16,21 +16,21 @@ Nota: Es importante revisar que todos los archivos .h y .cpp estén dentro de la
 1. Una vez que compile el programa aparecerá un menú similar al que se muestra a continuación:
 ```
 Hola!! Bienvenido.
-=====================================================
+═════════════════════════════════════════════════════
 a) Elige un tipo de dato para las listas: 
-    1. Entero 
-    2. Char 
-=====================================================
+    1. Entero [int] 
+    2. Char [char] 
+═════════════════════════════════════════════════════
 Opción: 
 ```
 En este paso únicamente se debe introducir el número (1 ó 2) dependiendo del tipo de dato que se desea usar para las listas.
 2. Después nos preguntará si deseamos generar la lista aleatoriamente o manual. Sólo se ingresa la opción númerica (1-2).
 ```
-=====================================================
+═════════════════════════════════════════════════════
 b) Tipos de lista a generar disponibles: 
     1. Generar lista aleatoria 
     2. Generar lista manualmente 
-=====================================================
+═════════════════════════════════════════════════════
 Opción: 
 ```
 3. En caso de seleccionar manual, se irán desplegando los espacios para insertar los valores en la lista principal y en una lista secundaria. 
@@ -39,7 +39,7 @@ Opción:
 
 4. Por último preguntará el tamaño de la lista que se desea generar, en este paso sólo se introduce un número entero.
 ```
-=====================================================
+═════════════════════════════════════════════════════
 c) Introduce el tamaño de la lista: 
 ```
 5. Después se imprimirán una confirmación de los datos. Y aquí es donde podremos ver la segunda lista :) como se muestra en el ejemplo a continuación.
@@ -51,8 +51,8 @@ Listas creadas con éxito!
 ```
 6. Por último nos mostrará las opciones disponibles a realizar:
 ```
-=====================================================
-d) Opciones disponibles para realizar
+═════════════════════════════════════════════════════
+d) Opciones disponibles para realizar: 
     1. Insertar un elemento
     2. Borrar un elemento
     3. Leer el valor de un dato (getData)
@@ -60,10 +60,14 @@ d) Opciones disponibles para realizar
     5. Encontrar un elemento dado (findData)
     6. Leer y/o actualizar elemento (uso [])
     7. Actualizar lista con base en otra lista (uso =)
-=====================================================
-Opción:
+    8. Exit
+═════════════════════════════════════════════════════
+Opción: 
 ```
-Al final desplegará el resultado según sea el caso de la función elegida.
+Al final desplegará el resultado según sea el caso de la función elegida o se imprimirá un mensaje de despedida si seleccionó la opción de salir.
+```
+Gracias por usar nuestra app. ¡Hasta pronto!
+```
 
 
 

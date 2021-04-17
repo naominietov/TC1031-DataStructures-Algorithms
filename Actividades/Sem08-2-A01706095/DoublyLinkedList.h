@@ -57,9 +57,8 @@ class DoublyLinkedList {
 };
 ///////////////////// util functions //////////////////////////
 template <typename T> DoublyLinkedList<T>::DoublyLinkedList() {
-  Node<T>* primero;
-  this->head = primero;
-  this->tail = primero;
+  head = nullptr;
+  tail = nullptr;
   this->size = 0;
 }
 template <typename T> int DoublyLinkedList<T>::getSize() {
@@ -83,7 +82,6 @@ template <typename T> void DoublyLinkedList<T>::setTail(Node<T> * tail) {
 template <typename T> void DoublyLinkedList<T>::printList() {
   int bandera = 0;
   Node<T> * elemento = this->head;
-
   cout << " [";
   while (bandera < this->getSize()) {
     cout << " " << elemento->getValue() << " ";
@@ -96,179 +94,184 @@ template <typename T> void DoublyLinkedList<T>::printList() {
 template <typename T> void DoublyLinkedList<T>::menuOpciones(DoublyLinkedList<T> &lista, int type, DoublyLinkedList<T> &lista2) {
   int opcion2, datoInputInt, nuevoDatoInt, posicionDato;
   char datoInputChar, nuevoDatoChar;
-  cout << "=====================================================\n";
-  cout << "d) Opciones disponibles para realizar: " << endl;
-  cout << "\t1. Insertar un elemento\n";
-  cout << "\t2. Borrar un elemento\n";
-  cout << "\t3. Leer el valor de un dato (getData)\n";
-  cout << "\t4. Actualizar un elemento\n";
-  cout << "\t5. Encontrar un elemento dado (findData)\n";
-  cout << "\t6. Leer y/o actualizar elemento ([])\n";
-  cout << "\t7. Actualizar lista con base en otra lista (=)\n";
-  cout << "\t8. Eliminar todos los elementos de una lista\n";
-  cout << "\t9. Ordenar una lista\n";
-  cout << "\t10. Duplicar cada elemento de la lista\n";
-  cout << "\t11. Eliminar todos los elementos duplicados\n";
-  cout << "=====================================================\n";
-  cout << "Opción: ";
-  cin >> menuOption;
-  if (menuOption == 1) {
-    cout << "\t1. Al principio de la lista (addFirst)\n" << "\t2. Al final de la lista(addLast)\n";
+  while (menuOption != 12) {
+    cout << "═════════════════════════════════════════════════════\n";
+    cout << "d) Opciones disponibles para realizar: " << endl;
+    cout << "\t1. Insertar un elemento\n";
+    cout << "\t2. Borrar un elemento\n";
+    cout << "\t3. Leer el valor de un dato (getData)\n";
+    cout << "\t4. Actualizar un elemento\n";
+    cout << "\t5. Encontrar un elemento dado (findData)\n";
+    cout << "\t6. Leer y/o actualizar elemento ([])\n";
+    cout << "\t7. Actualizar lista con base en otra lista (=)\n";
+    cout << "\t8. Eliminar todos los elementos de una lista\n";
+    cout << "\t9. Ordenar una lista\n";
+    cout << "\t10. Duplicar cada elemento de la lista\n";
+    cout << "\t11. Eliminar todos los elementos duplicados\n";
+    cout << "\t12. Exit\n";
+    cout << "═════════════════════════════════════════════════════\n";
     cout << "Opción: ";
-    cin >> opcion2;
-    cout << "Introduzca el valor del elemento a insertar: ";
-    if (opcion2 == 1) { // ADD FIRST
-      if (type == 1) { //int
-        cin >> datoInputInt;
-        lista.addFirst(datoInputInt);
+    cin >> menuOption;
+    if (menuOption == 1) {
+      cout << "\t1. Al principio de la lista (addFirst)\n" << "\t2. Al final de la lista(addLast)\nOpción: ";
+      cin >> opcion2;
+      cout << "Introduzca el valor del elemento a insertar: ";
+      if (opcion2 == 1) { // ADD FIRST
+        if (type == 1) { //int
+          cin >> datoInputInt;
+          lista.addFirst(datoInputInt);
+        }
+        else if (type == 2) { // char
+          cin >> datoInputChar;
+          lista.addFirst(datoInputChar);
+        }
       }
-      else if (type == 2) { // char
-        cin >> datoInputChar;
-        lista.addFirst(datoInputChar);
+      else if (opcion2 == 2) { // ADD LAST
+        if (type == 1) { //int
+          cin >> datoInputInt;
+          lista.addLast(datoInputInt);
+        }
+        else if (type == 2) { // char
+          cin >> datoInputChar;
+          lista.addLast(datoInputChar);
+        }
       }
-    }
-    else if (opcion2 == 2) { // ADD LAST
-      if (type == 1) { //int
-        cin >> datoInputInt;
-        lista.addLast(datoInputInt);
-      }
-      else if (type == 2) { // char
-        cin >> datoInputChar;
-        lista.addLast(datoInputChar);
-      }
-    }
-    cout << "Los elementos de la lista actual son: \n";
-    lista.printList();
-  } 
+      cout << "Los elementos de la lista actual son: \n";
+      lista.printList();
+    } 
 
-  else if (menuOption == 2) { //DELETE 
-    cout << "\t1. Borrar un elemento dado (deleteData)\n" << "\t2. Borrar un elemento en una posición (deleteAt)\n";
-    cout << "Opción: ";
-    cin >> opcion2;
-    if (opcion2 == 1) { // DELETE DATA
-    cout << "Introduzca el valor del elemento a borrar: ";
-      if (type == 1) { //int
-        cin >> datoInputInt;
-        lista.deleteData(datoInputInt);
+    else if (menuOption == 2) { //DELETE 
+      cout << "\t1. Borrar un elemento dado (deleteData)\n" << "\t2. Borrar un elemento en una posición (deleteAt)\nOpción: ";
+      cin >> opcion2;
+      if (opcion2 == 1) { // DELETE DATA
+      cout << "Introduzca el valor del elemento a borrar: ";
+        if (type == 1) { //int
+          cin >> datoInputInt;
+          lista.deleteData(datoInputInt);
+        }
+        else if (type == 2) { // char
+          cin >> datoInputChar;
+          lista.deleteData(datoInputChar);
+        }
       }
-      else if (type == 2) { // char
-        cin >> datoInputChar;
-        lista.deleteData(datoInputChar);
+      else if (opcion2 == 2) { // DELETE AT
+      cout << "Introduzca la posición del elemento a borrar: ";
+      cin >> posicionDato;
+      lista.deleteAt(posicionDato);
       }
+      cout << "Los elementos de la lista actual son: \n";
+      lista.printList();
     }
-    else if (opcion2 == 2) { // DELETE AT
-    cout << "Introduzca la posición del elemento a borrar: ";
-    cin >> posicionDato;
-    lista.deleteAt(posicionDato);
+    else if (menuOption == 3) { // READ
+      cout << "Introduzca la posición del elemento que desea leer: ";
+      cin >> posicionDato;
+      lista.getData(posicionDato);
     }
-    cout << "Los elementos de la lista actual son: \n";
-    lista.printList();
-  }
-
-  else if (menuOption == 3) { // READ
-    cout << "Introduzca la posición del elemento que desea leer: ";
-    cin >> posicionDato;
-    lista.getData(posicionDato);
-  }
-
-  else if (menuOption == 4) { // UPDATE 
-    cout << "\t1. Actualizar un elemento dado (updateData)\n" << "\t2. Actualizar un elemento en una posición (updateAt)\n";
-    cout << "Opción: ";
-    cin >> opcion2; 
-    if (opcion2 == 1) { //updateData
-    cout << "Introduzca el valor elemento a actualizar: ";
-      if (type == 1) { //int
-        cin >> datoInputInt;
-        cout << "Introduzca el nuevo valor del elemento: ";
+    else if (menuOption == 4) { // UPDATE 
+      cout << "\t1. Actualizar un elemento dado (updateData)\n" << "\t2. Actualizar un elemento en una posición (updateAt)\nOpción: ";
+      cin >> opcion2; 
+      if (opcion2 == 1) { //updateData
+      cout << "Introduzca el valor elemento a actualizar: ";
+        if (type == 1) { //int
+          cin >> datoInputInt;
+          cout << "Introduzca el nuevo valor del elemento: ";
+          cin >> nuevoDatoInt;
+          lista.updateData(datoInputInt, nuevoDatoInt);
+        }
+        else if (type == 2) { // char
+          cin >> datoInputChar;
+          cout << "Introduzca el nuevo valor del elemento: ";
+          cin >> nuevoDatoChar;
+          lista.updateData(datoInputChar, nuevoDatoChar);
+        }
+      }
+      else if (opcion2 == 2) { //updateAt
+      cout << "Introduzca la posición del elemento a actualizar: ";
+      cin >> posicionDato;
+        if (type == 1) { //int
+          cout << "Introduzca el nuevo valor del elemento: ";
+          cin >> nuevoDatoInt;
+          lista.updateAt(posicionDato, nuevoDatoInt);
+        }
+        else if (type == 2) { // char
+          cout << "Introduzca el nuevo valor del elemento: ";
+          cin >> nuevoDatoChar;
+          lista.updateAt(posicionDato, nuevoDatoChar);
+        }
+      }
+      cout << "Los elementos de la lista actual son: \n";
+      lista.printList();
+    }
+    else if (menuOption == 5) { // FIND 
+      cout << "Introduzca el valor del elemento a buscar: ";
+      if (type == 1) {
         cin >> nuevoDatoInt;
-        lista.updateData(datoInputInt, nuevoDatoInt);
+        lista.findData(nuevoDatoInt);
       }
-      else if (type == 2) { // char
-        cin >> datoInputChar;
-        cout << "Introduzca el nuevo valor del elemento: ";
+      else if (type == 2) {
         cin >> nuevoDatoChar;
-        lista.updateData(datoInputChar, nuevoDatoChar);
+        lista.findData(nuevoDatoChar);
       }
     }
-    else if (opcion2 == 2) { //updateAt
-    cout << "Introduzca la posición del elemento a actualizar: ";
-    cin >> posicionDato;
-      if (type == 1) { //int
-        cout << "Introduzca el nuevo valor del elemento: ";
+    else if (menuOption == 6) { // Sobrecarga []
+      cout << "Introduzca la posición del elemento a actualizar: ";
+      cin >> posicionDato;
+      cout << "Introduzca el valor del nuevo elemento: ";
+      if (type == 1) {
         cin >> nuevoDatoInt;
-        lista.updateAt(posicionDato, nuevoDatoInt);
+        lista[posicionDato]->setValue(nuevoDatoInt);
       }
-      else if (type == 2) { // char
-        cout << "Introduzca el nuevo valor del elemento: ";
+      else if (type == 2) {
         cin >> nuevoDatoChar;
-        lista.updateAt(posicionDato, nuevoDatoChar);
+        lista[posicionDato]->setValue(nuevoDatoChar);
       }
+      cout << "Los elementos de la lista actual son: \n";
+      lista.printList();
     }
-    cout << "Los elementos de la lista actual son: \n";
-    lista.printList();
-  }
-  else if (menuOption == 5) { // FIND 
-    cout << "Introduzca el valor del elemento a buscar: ";
-    if (type == 1) {
-      cin >> nuevoDatoInt;
-      lista.findData(nuevoDatoInt);
+    else if (menuOption == 7) { // Sobrecarga =
+      cout << "Lista 1: ";
+      lista.printList();
+      cout << "Lista 2: ";
+      lista2.printList();
+      lista = lista2;
+      cout << "Nueva lista 1: ";
+      lista.printList();
     }
-    else if (type == 2) {
-      cin >> nuevoDatoChar;
-      lista.findData(nuevoDatoChar);
+    else if (menuOption == 8) { // clear
+      cout << "Los nodos de la lista a borrar son: " << endl;
+      lista.clear(); cout << endl;
+      cout << "Lista vacía:";
+      lista.printList();
     }
-  }
-  else if (menuOption == 6) { // Sobrecarga []
-    cout << "Introduzca la posición del elemento a actualizar: ";
-    cin >> posicionDato;
-    cout << "Introduzca el valor del nuevo elemento: ";
-    if (type == 1) {
-      cin >> nuevoDatoInt;
-      lista[posicionDato]->setValue(nuevoDatoInt);
+    else if (menuOption == 9) { // sort
+      cout << "La lista desordenada es: \n";
+      lista.printList();
+      cout << "La lista ordenada es: \n";
+      lista.sort(lista.head, lista.lastNode(head));
+      lista.printList();
     }
-    else if (type == 2) {
-      cin >> nuevoDatoChar;
-      lista[posicionDato]->setValue(nuevoDatoChar);
+    else if (menuOption == 10) { // duplicate
+      cout << "Lista original:\n";
+      lista.printList();
+      cout << "Lista duplicada:\n";
+      lista.duplicate();
+      cout<< "All nodes were duplicated successfully.\n";
     }
-    cout << "Los elementos de la lista actual son: \n";
-    lista.printList();
-  }
-  else if (menuOption == 7) { // Sobrecarga =
-    cout << "Lista 1: ";
-    lista.printList();
-    cout << "Lista 2: ";
-    lista2.printList();
-    lista = lista2;
-    cout << "Nueva lista 1: ";
-    lista.printList();
-  }
-  else if (menuOption == 8) { // clear
-    cout << "Los nodos de la lista a borrar son: " << endl;
-    lista.clear(); cout << endl;
-    cout << "Lista vacía:";
-    lista.printList();
-  }
-  else if (menuOption == 9) { // sort
-    cout << "La lista desordenada es: \n";
-    lista.printList();
-    cout << "La lista ordenada es: \n";
-    lista.sort(lista.head, lista.lastNode(head));
-    lista.printList();
-  }
-  else if (menuOption == 10) { // duplicate
-    cout << "Lista original:\n";
-    lista.printList();
-    cout << "Lista duplicada:\n";
-    lista.duplicate();
-    cout<< "All nodes were duplicated successfully.\n";
-  }
-  else if (menuOption == 11) { //remove duplicates
-    cout << "Lista original:\n";
-    lista.duplicate();
-    cout << "Lista sin elementos duplicados:\n";
-    lista.removeDuplicates();
-    lista.printList();
-  }
+    else if (menuOption == 11) { //remove duplicates
+      cout << "Lista original:\n";
+      lista.duplicate();
+      cout << "Lista sin elementos duplicados:\n";
+      lista.removeDuplicates();
+      lista.printList();
+    }
+    else if (menuOption == 12) { //EXIT
+      cout << "Gracias por usar nuestra app. ¡Hasta pronto!\n";
+      break;
+    }
+    else {
+      cout << "ERROR: Por favor, introduzca una opción válida (1-8)\n";
+    }
+  } // End while
 }
 ///////////////////// new lists //////////////////////////
 template <typename T> void DoublyLinkedList<T>::newRandomList(int type, int sizeInt) {
@@ -323,21 +326,26 @@ template <typename T> void DoublyLinkedList<T>::addFirst(T value) {
   head = ptr;
   size++;
 }
+
 template <typename T> void DoublyLinkedList<T>::addLast(T value) {
-  if(head == NULL) {
-    head = new Node<T>(value); //Create new node of type T
-    head->setNext(NULL);
-    tail = head;
-    size++;
+   if(this->head) { //Lista con nodos
+    Node<T> * temp = head;
+    while (temp->getNext()) {
+      temp = temp->getNext();
+    } 
+    Node<T> * nuevo = new Node<T>(value,nullptr,temp);
+    temp->setNext(nuevo);
+    this->setTail(nuevo);
+    this->size++;                     
   }
-  else {
-    Node<T> *ptr = new Node<T>(value);
-    tail->setNext(ptr);
-    ptr->setPrevious(tail);
-    this->setTail(ptr);
-    size++;
+  else { //Lista sin nodos
+    Node<T> * nuevo = new Node<T>(value,nullptr,nullptr);
+    this->setHead(nuevo);
+    this->setTail(nuevo);
+    this->size++;
   }
 }
+
 template <typename T> void DoublyLinkedList<T>::deleteData(T dato) {
   Node<T> * nodo=this->head;
   Node<T> * erase;
@@ -434,7 +442,7 @@ template <typename T> T DoublyLinkedList<T>::getData(int pos) {
       counter++;
       elem = elem->getNext();
       if (counter == pos && elem != nullptr) {
-        cout<<"El elemento "<<"["<<elem->getValue()<<"]"<<" se encuentra en la posicion "<<"["<<counter<<"]"<<endl;
+        cout<<"El elemento "<<elem->getValue()<<" se encuentra en la posicion "<<"["<<counter<<"]"<<endl;
         bandera = 1;
         return elem->getValue();
       }
@@ -528,6 +536,7 @@ template <typename T> void DoublyLinkedList<T>::findData(T value){
     throw std::out_of_range("El elemento a buscar no se encuentra: Out_Of_Range");
   }
 }
+
 template <class T> Node<T>* DoublyLinkedList<T>::operator[](const int &position) {
   Node<T> *current = head;
   int counter = 1;
@@ -672,7 +681,6 @@ template <typename T> void DoublyLinkedList<T>::deleteNode(Node<T>** head_ref, N
   if (del->getPrevious() != NULL) {
     del->prev->next = del->next;
   }
-  // Finally, free the memory occupied by del
   free(del);
   size--;
 }
@@ -684,17 +692,12 @@ template <typename T> void DoublyLinkedList<T>::removeDuplicates() {
   if ((*elemento) == NULL || (*elemento)->getNext() == NULL) {
     return;
   }
-  
   for (ptr1 = *elemento; ptr1 != NULL; ptr1 = ptr1->getNext()) {
     ptr2 = ptr1->getNext();
     while (ptr2 != NULL) {
-      // if duplicate, then delete it
       if (ptr1->value == ptr2->value) {
-        // store pointer to the node next to 'ptr2'
         Node<T>* next = ptr2->getNext();
-        // delete node pointed to by 'ptr2'
         deleteNode(elemento, ptr2);
-        // update 'ptr2'
         ptr2 = next;
       }
       else {

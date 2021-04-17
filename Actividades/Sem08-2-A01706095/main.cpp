@@ -15,32 +15,23 @@
 using namespace std;
 
 int main(int argc, const char * argv[]) {
-  int opcion;
-  int switchOption;
-  int tipoDato;
-  int tipoLista;
-  int size;
+  int opcion, switchOption, tipoDato, tipoLista, size;
   
-  cout << "Hola!! Bienvenido." << endl;
-  cout << "=====================================================\n";
-  cout << "a) Elige un tipo de dato para las listas: " << endl;
-  cout << "\t1. Entero [int] \n";
-  cout << "\t2. Char [char] \n";
-  cout << "=====================================================\n";
-  cout << "Opción: ";
+  cout << "Hola!! Bienvenido.\n";
+  cout << "═════════════════════════════════════════════════════\n";
+  cout << "a) Elige un tipo de dato para las listas:\n";
+  cout << "\t1. Entero [int]\n\t2. Char [char]\n";
+  cout << "═════════════════════════════════════════════════════\nOpción: ";
   cin >> tipoDato;
-  cout << "=====================================================\n";
-  cout << "b) Tipos de lista a generar disponibles: " << endl;
-  cout << "\t1. Generar lista aleatoria \n";
-  cout << "\t2. Generar lista manualmente \n";
-  cout << "=====================================================\n";
-  cout << "Opción: ";
+  cout << "═════════════════════════════════════════════════════\n";
+  cout << "b) Tipos de lista a generar disponibles:\n";
+  cout << "\t1. Generar lista aleatoria\n\t2. Generar lista manualmente\n";
+  cout << "═════════════════════════════════════════════════════\nOpción: ";
   cin >> tipoLista;
-  cout << "=====================================================\n";
+  cout << "═════════════════════════════════════════════════════\n";
   cout << "c) Introduce el tamaño de la lista: ";
   cin >> size;
-  cout << "=====================================================\n";
-  cout << "\n";
+  cout << "═════════════════════════════════════════════════════\n\n";
 
   if (tipoDato == 1) { // Lista de enteros
     DoublyLinkedList<int> lista = DoublyLinkedList<int>();
@@ -61,7 +52,7 @@ int main(int argc, const char * argv[]) {
       lista2.newManualList(tipoDato, size);
     }
     else { 
-      cout << "Introduce una opción válida (1-2)" << endl;
+      cout << "ERROR: Introduce una opción válida (1-2)" << endl;
     }
     cout << "Listas creadas con éxito!\n" << "\n";
     lista.menuOpciones(lista, tipoDato, lista2);
@@ -85,11 +76,14 @@ int main(int argc, const char * argv[]) {
       cout << "Lista 2: "; 
       lista2.newManualList(tipoDato, size);
     }
-    else {
-      cout << "Introduce una opción válida (1-2)" << endl;
+    else { 
+      cout << "ERROR: Introduce una opción válida (1-2)" << endl;
     }
     cout << "Listas creadas con éxito!\n" << "\n";
     lista.menuOpciones(lista, tipoDato, lista2);
+  }
+  else { 
+    cout << "ERROR: Introduce una opción válida (1-2)" << endl;
   }
   return 0;
 }; /* End main */

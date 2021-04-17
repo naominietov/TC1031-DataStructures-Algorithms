@@ -3,7 +3,7 @@
 * 25 marzo 2021 11:50:52
 * OutOfRangeException.h
 * A01706095 Naomi Estefanía Nieto Vega
-* A01283687 Ramsés Herrera
+* A01283687 Ramsés Herrera Santiago
 */
 
 #ifndef OutOfRangeException_h

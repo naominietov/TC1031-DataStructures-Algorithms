@@ -3,7 +3,7 @@
 * 25 marzo 2021 11:50:52
 * Node.h
 * A01706095 Naomi Estefanía Nieto Vega
-* A01283687 Ramsés Herrera
+* A01283687 Ramsés Herrera Santiago
 */
 #ifndef Node_h
 #define Node_h
@@ -25,6 +25,7 @@ class Node {
   void setPrevious(Node<T>*);
   Node(T, Node<T>*, Node<T>*);
   Node();
+  Node(T value);
 };
 
 template <typename T>
@@ -65,7 +66,12 @@ Node<T>::Node(T value, Node<T> * next, Node<T> * prev){
 }
 template <typename T>
 Node<T>::Node(){
-  this->value;
+  this->next = nullptr;
+  this->prev = nullptr;
+}
+template <typename T>
+Node<T>::Node(T value){
+  this->value = value;
   this->next = nullptr;
   this->prev = nullptr;
 }

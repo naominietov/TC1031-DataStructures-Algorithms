@@ -8,7 +8,6 @@
 #include <iostream>
 #include "BinarySearchTree.h"
 
-
 int main(int argc, const char * argv[]) {
   BinarySearchTree<int> bst;
   bst.insert(10);
@@ -20,5 +19,4 @@ int main(int argc, const char * argv[]) {
   bst.insert(3);
   
   bst.menu(bst);
-  //bst.print(bst.root, nullptr, false);
 }

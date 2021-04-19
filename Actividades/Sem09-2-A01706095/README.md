@@ -15,7 +15,7 @@ Nota: Es importante revisar que todos los archivos .h y .cpp estén dentro de la
 
 1. Una vez que compile el programa aparecerá un menú similar al que se muestra a continuación:
 ```
-Binary Search Tree
+                Binary Search Tree
 ═════════════════════════════════════════════════════
 BST Basic Operations: 
     1. Insert
@@ -35,6 +35,4 @@ Option:
 
 Al final desplegará el resultado según sea el caso de la función elegida.
 
-
-
-⌨️ con ❤️ 
+Coded with ❤️ 

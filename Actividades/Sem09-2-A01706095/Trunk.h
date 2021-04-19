@@ -15,8 +15,7 @@
 using namespace std;
 
 template <class T>  
-class Trunk
-{   
+class Trunk {   
     public:
     Trunk<T> *prev;
     string str;
@@ -24,11 +23,10 @@ class Trunk
 };
 
 template <class T>  
-Trunk<T>::Trunk(Trunk<T> *prev, string str)
-    {
-        this->prev = prev;
-        this->str = str;
-    }
+Trunk<T>::Trunk(Trunk<T> *prev, string str) {
+    this->prev = prev;
+    this->str = str;
+}
 
 
 

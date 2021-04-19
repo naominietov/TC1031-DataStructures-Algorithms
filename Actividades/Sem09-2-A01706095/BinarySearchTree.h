@@ -16,6 +16,7 @@ template <class T>
 class BinarySearchTree { 
   private:
     int option;
+    char opc;
   public: 
     NodeTree<T> * root;
     BinarySearchTree();
@@ -49,7 +50,8 @@ template<class T>
 void BinarySearchTree<T>::menu(BinarySearchTree<T> &bst) {
   T value;
   while (option != 9) {
-    std::cout << "\t\t\t\tBinary Search Tree\n";
+    std::cout << "\n";
+    std::cout << "\t\tBinary Search Tree\n";
     std::cout << "═════════════════════════════════════════════════════\n";
     std::cout << "BST Basic Operations: \n";
     std::cout << "\t1. Insert\n\t2. Delete\n\t3. Print\n\t4. Find\n";
@@ -63,20 +65,32 @@ void BinarySearchTree<T>::menu(BinarySearchTree<T> &bst) {
     
     switch (option) {
       case 1:
-        std::cout << "Introduce el valor a insertar: ";
+        std::cout << "Introduce el elemento a insertar: ";
         std::cin >> value;
         bst.insert(value);
+        std::cout << "El elemento " << value << " se insertó correctamente! ";
+        std::cout << "Deseas visualizar el resultado? (Y/N)\n";
+        std::cin >> opc;
+        if (opc == 'Y') {
+          bst.print(bst.root, nullptr, false);
+        }
       break;
       case 2:
-        std::cout << "Introduce el valor a borrar: ";
+        std::cout << "Introduce el elemento a borrar: ";
         std::cin >> value;
         bst.remove(bst.root,value);
+        std::cout << "El elemento " << value << " se eliminó correctamente! ";
+        std::cout << "Deseas visualizar el resultado? (Y/N)\n";
+        std::cin >> opc;
+        if (opc == 'Y') {
+          bst.print(bst.root, nullptr, false);
+        }
       break;
       case 3:
         bst.print(bst.root, nullptr, false);
       break;
       case 4:
-        std::cout << "Introduce el valor a buscar: ";
+        std::cout << "Introduce el elemento a buscar: ";
         std::cin >> value;
         bst.find(value);
       break;
@@ -94,13 +108,13 @@ void BinarySearchTree<T>::menu(BinarySearchTree<T> &bst) {
         std::cout << "La altura es: " << bst.height(bst.root) << "\n";
       break;
       case 7:
-        std::cout << "Introduce el valor a buscar: ";
+        std::cout << "Introduce el elemento a buscar: ";
         std::cin >> value;
         std::cout << "Ancestors: " ; 
         bst.printAncestors(bst.root, value);
       break;
       case 8: 
-        std::cout << "Introduce el valor a buscar: ";
+        std::cout << "Introduce el elemento a buscar: ";
         std::cin >> value;
         std::cout << "Level of "<< value << " is " << bst.getLevel(bst.root, value) << "\n";
       break;
@@ -111,7 +125,7 @@ void BinarySearchTree<T>::menu(BinarySearchTree<T> &bst) {
         std::cout << "Opción inválida. Por favor introduce una opción válida (1-9)\n\n";
       break;
     } // End switch
-  }
+  } // End while
 } // End menu
 
 template<class T>
@@ -158,7 +172,7 @@ NodeTree<T> * BinarySearchTree<T>::insertRecursive(NodeTree<T> *p, T valor) {
   else if (valor > p->data)
     p->right = insertRecursive(p->right, valor);
   else
-    std::cout << "El elemento " << valor << " ya existe en el árbol" << std::endl;
+    std::cout << "El elemento " << valor << " ya existe en el árbol" << "\n";
   return p;
 }
 

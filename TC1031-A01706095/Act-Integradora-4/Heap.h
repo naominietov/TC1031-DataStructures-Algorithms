@@ -7,6 +7,7 @@
 */
 #ifndef Heap_h
 #define Heap_h
+#include <vector>
 
 using namespace std;
 

@@ -70,7 +70,7 @@ int main() {
 
   heapData.heapSort(heapData.heapLog, heapData.heapLog.size());
 
-  std::ofstream sortedIPAdjacencies("IPsOrdenadasPorAdjacencia.csv");
+  std::ofstream sortedIPAdjacencies("IPsOrdenadasPorAdyacencia.csv"); // Cambiar extension a .txt para exportar en ese formato
   sortedIPAdjacencies << "IP Address," << "Number of Adjacencies" << "\n";
   for (int i = heapData.heapLog.size()-1; i < heapData.heapLog.size(); i--) {
     sortedIPAdjacencies << heapData.heapLog[i].nativeIpAddress << "," << heapData.heapLog[i].size;
@@ -78,7 +78,7 @@ int main() {
   }
   sortedIPAdjacencies.close();
 
-  std::ofstream results("Results.txt");
+  std::ofstream results("Resultados.txt");
   std::cout << "\n";
   std::cout << "*** Results: IP with the most adjacencies ***\n";
   std::cout << "═════════════════════════════════════════════\n";

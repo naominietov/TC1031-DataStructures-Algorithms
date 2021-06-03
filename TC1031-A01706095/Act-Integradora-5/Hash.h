@@ -84,7 +84,7 @@ void Map::find(const string& key, string ip2) {
 void Map::findPrint(const string& key) {
   int index = find_index(key);
   if (index != -1) {
-    values[index].printList();
+    values[index].print();
   }
   return;
 }

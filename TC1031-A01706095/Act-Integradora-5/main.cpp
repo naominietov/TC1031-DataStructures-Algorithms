@@ -82,12 +82,13 @@ int main() {
   sortedIPAdjacencies.close();
   
   std::cout << "\n";
+  std::cout << "Welcome!" << "\n";
   std::cout << "═════════════════════════════════════════════\n";
   std::cout << "Enter a valid IP Address: ";
   std::cin >> requestedIp;
   std::cout << "═════════════════════════════════════════════\n";
   map.findPrint(requestedIp);
   std::cout << "═════════════════════════════════════════════\n";
-  
+  std::cout << "Thanks for using our app. " << "\n";
   return 0;
 }

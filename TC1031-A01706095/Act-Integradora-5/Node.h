@@ -21,7 +21,7 @@ class Node {
   Node(std::string);
   Node(std::string, int);
   void addAdjacency(std::string);
-  void printList();
+  void print();
 };
 
 Node::Node() {
@@ -46,14 +46,13 @@ void Node::addAdjacency(std::string a) {
   size++;
 }
 
-void Node::printList() {
-  std::cout << "Requested IP: " << IpAddress << std::endl;
-  std::cout << std::endl;
-  std::cout << "List of Adjacent IP Addresses: " << std::endl;
+void Node::print() {
+  std::cout << "Requested IP: " << IpAddress << "\n";
+  std::cout << "\n";
+  std::cout << "Adjacent IP Addresses: " << "\n";
   for (int i = 0; i < adj.size(); i++) {
-    std::cout << "- " << adj[i] << std::endl;
+    std::cout << "[" << i+1 << "]" << "- " << adj[i] << "\n";
   }
-  std::cout << std::endl;
 }
 
 #endif /* Node_h */

@@ -17,19 +17,20 @@
 using namespace std;
 
 class Map {
-public:
-  Map();
-  Map(string filename);
-  void findPrint(const string& key);
-  void find(const string& key, string ip2);  
-  void insert(const string& key, const Node& value);
-  void print(ofstream &miArchivo);
-protected:
-  unsigned int hash(const string& key);
-  int find_index(const string& key, bool override_duplicated_key);
-  const static unsigned int size_max = 14000;
+  protected:
+  const static unsigned int size_max = 15000;
   string keys[size_max];
   Node values[size_max];
+  unsigned int hash(const string&);
+  int findIndex(const string&, bool);
+
+  public:
+  Map();
+  Map(string);
+  void findAdjacencies(const string&);
+  void find(const string&, string);  
+  void insert(const string&, const Node&);
+  void print(ofstream &);
 };
 
 Map::Map() {
@@ -46,13 +47,7 @@ unsigned int Map::hash(const string& k) {
   return value;
 }
 
-void Map::print(ofstream &results) {
-  for (int i = 0; i < size_max; i++)
-    if (!keys[i].empty())
-      results << keys[i] << ",\t" << values[i].size << "\n";
-}
-
-int Map::find_index(const string& key, bool override_duplicate_key = true) {     
+int Map::findIndex(const string& key, bool override_duplicate_key = true) {     
   unsigned int h = hash(key) % size_max, offset = 0, index;
   while (offset < size_max) {
     index = (h + offset) % size_max;
@@ -64,7 +59,7 @@ int Map::find_index(const string& key, bool override_duplicate_key = true) {
 }
 
 void Map::insert(const string& key, const Node& value) {
-  int index = find_index(key);
+  int index = findIndex(key);
   if (index == -1) {
     cerr << "Table is full!" << endl;
     return;
@@ -74,19 +69,27 @@ void Map::insert(const string& key, const Node& value) {
 }
 
 void Map::find(const string& key, string ip2) {
-  int index = find_index(key);
+  int index = findIndex(key);
   if (index != -1) {
     values[index].addAdjacency(ip2);
   }
   return;
 }
 
-void Map::findPrint(const string& key) {
-  int index = find_index(key);
+void Map::findAdjacencies(const string& key) {
+  int index = findIndex(key);
   if (index != -1) {
     values[index].print();
   }
   return;
+}
+
+void Map::print(ofstream &results) {
+  for (int i = 0; i < size_max; i++) {
+    if (!keys[i].empty()) {
+      results << keys[i] << "\t" << values[i].size << "\n";
+    }
+  }
 }
 
 #endif /* Hash_h */

@@ -76,8 +76,8 @@ int main() {
   }
   bitacora.close();
 
-  std::ofstream sortedIPAdjacencies("sortedAdjacencyIP.csv");
-  sortedIPAdjacencies << "IP Address," << "Number of Adjacencies" << "\n";
+  std::ofstream sortedIPAdjacencies("sortedAdjacencyIP.txt");
+  sortedIPAdjacencies << "IP Address" << "\t" << "Number of Adjacencies" << "\n";
   map.print(sortedIPAdjacencies);
   sortedIPAdjacencies.close();
   
@@ -87,7 +87,7 @@ int main() {
   std::cout << "Enter a valid IP Address: ";
   std::cin >> requestedIp;
   std::cout << "═════════════════════════════════════════════\n";
-  map.findPrint(requestedIp);
+  map.findAdjacencies(requestedIp);
   std::cout << "═════════════════════════════════════════════\n";
   std::cout << "Thanks for using our app. " << "\n";
   return 0;

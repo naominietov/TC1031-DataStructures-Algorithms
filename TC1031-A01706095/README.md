@@ -3,5 +3,3 @@ En esta carpeta se almacenarán todos los archivos que dan solución a las Activ
 
 ## Comenzando 🚀
 
-
-### Pre-requisitos 📋
